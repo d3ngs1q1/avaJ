@@ -8,11 +8,11 @@
 
 ### 阻塞队列提供了四种处理方法：
 
-| 方法\处理方式 | 抛出异常 | 返回特殊值 | 一直阻塞 | 超时退出 |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 插入方法 | add(e) | offer(e) | put(e) | offer(e,time,unit) |
-| 移除方法 | remove()| poll() | take() | poll(time,unit) |
-| 检查方法 | element() | peek() | 不可用 | 不可用 |
+| 方法\处理方式  | 抛出异常  | 返回特殊值 | 一直阻塞  | 超时退出 |
+| :---:         | :---:      | :---:     | :---:     | :---:  |
+| 插入方法       | add(e)    | offer(e)  | put(e)    | offer(e,time,unit) |
+| 移除方法       | remove()  | poll()    | take()    | poll(time,unit) |
+| 检查方法       | element() | peek()    | 不可用    | 不可用 |
 
 - **抛出异常：** 是指当阻塞队列满时候，再往队列里插入元素，会抛出 IllegalStateException("Queue full") 异常。当队列为空时，从队列里获取元素时会抛出 NoSuchElementException 异常 。
 - **返回特殊值：** 插入方法会返回是否成功，成功则返回true。移除方法，则是从队列里拿出一个元素，如果没有则返回 null。
